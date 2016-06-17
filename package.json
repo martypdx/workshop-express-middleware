@@ -1,0 +1,14 @@
+{
+  "name": "express-middleware",
+  "version": "1.0.0",
+  "description": "![cf](http://i.imgur.com/7v5ASc8.png) Getting Beyond \"app.get()\": ExpressJS Middleware Explained and Explored ====",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marty Nelson <marty@martypdx.com> (@martypdx)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
