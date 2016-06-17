@@ -9,7 +9,7 @@
 	> npm init
 	> npm install express -S
 	```
-* Create a file (`test.js`)
+* Create a file `test.js`
 
 	```js
 	const app = require('express')();
@@ -18,7 +18,8 @@
 	res.send('hello world');
 	});
 
-	app.listen(8081);
+	const port = 8081;
+	app.listen(port, () => console.log('running on port', port));	
 	```
 
 * From terminal:
