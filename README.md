@@ -6,7 +6,7 @@ NodePDX 2016 Workshop
 Agenda
 * Intros
 * [Setup Check](setup-check.md)
-* Review [Arrow Functions]()
+* Review [Arrow Functions](https://github.com/martypdx/workshop-promises-fat-arrows/blob/master/fat-arrows.md)
 * Use the `express.Router` object to modularize routes by resource type (REST noun)
 * Correctly order app routes and multi-function routes by knowing how middleware "flows"
 * Use the `next()` function to selectively apply common app logic like authentication and authorization
