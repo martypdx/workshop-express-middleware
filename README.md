@@ -5,12 +5,11 @@ NodePDX 2016 Workshop
 
 Agenda
 * Intros
+* Format: hand-on, try it out!
 * [Setup Check](setup-check.md)
 * Review [Arrow Functions](https://github.com/martypdx/workshop-promises-fat-arrows/blob/master/fat-arrows.md)
-* Use the `express.Router` object to modularize routes by resource type (REST noun)
-* Correctly order app routes and multi-function routes by knowing how middleware "flows"
-* Use the `next()` function to selectively apply common app logic like authentication and authorization
-* Understand what third-party middlewares like `body-parser` are actually doing
-* Introduce custom properties on the request object
-* Use parameter based middleware
-* Setup common error handling
+* [Express](http://expressjs.com/)
+	* [Middleware, middlewhat?](middleware.md)
+	* [Router](router.md)
+	* [`next()`, error handling, and 404](next.md)
+* Looking forward: [koa.js](koajs.com) radical evolution
