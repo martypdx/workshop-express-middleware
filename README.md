@@ -5,7 +5,7 @@
 ### _ExpressJS Middleware Explained and Explored_
 
 * Intros
-	* me & Code Fellows
+	* me & Code Fellows (facilities)
 	* you
 		* where from?
 		* what do you like about node?
