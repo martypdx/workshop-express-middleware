@@ -5,6 +5,11 @@
 
 Agenda
 * Intros
+	* me & Code Fellows
+	* you
+		* where from?
+		* what do you like about node?
+		* anything else we should know?
 * Workshop format
 	* hands-on
 	* try it out!
@@ -15,4 +20,4 @@ Agenda
 	* [Middleware, middlewhat?](middleware.md)
 	* [Router](router.md)
 	* [`next()`, error handling, and 404](next.md)
-* Looking forward: [koa.js](koajs.com) radical evolution
+* Looking forward, next gen: [koa.js](koajs.com) 
