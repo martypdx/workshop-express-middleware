@@ -20,8 +20,9 @@ app.use( ( req, res ) => {
 })
 
 app.use( ( err, req, res, next ) => {
-	const code = err.code ? err.code : 500;
-	const error = err.error ? err.error : err || 'Internal error';
+	const code = ( err && err.code ) ? err.code : 500;
+	const error = ( err && err.error ) ? err.error : err || 'Internal error';
+	// be kind to developers expecting json api and return a json response
 	res.status( code ).send( { error } );
 });
 
