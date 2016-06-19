@@ -1,29 +1,31 @@
 const app = require('express')();
+const bodyParser = require( './my-body-parser' )();
+
+function checkAuth( req, res, next ) {
+	const token = req.get('Authorization');
+	if( token && token === 'sekrit' ) {
+		next();
+	}
+	else {
+		res.status(400).send('not authorized')
+	}
+}
 
 app.use( ( req, res, next ) => {
 	console.log( req.method, req.url );
 	next();
 });
 
-app.use( ( req, res, next ) => {
-	let body ='';
-	req.on( 'data', chunk => {
-		body += chunk;
-	});
-	req.on( 'end', () => {
-		req.body = body ? JSON.parse( body ) : null;
-		next();
-	});
+app.get( '/', checkAuth, (req, res) => {
+		res.send('hello authed peeps');
+});
 
-})
-
-app.get( '/', (req, res) => {
+app.get( '/open', (req, res) => {
 		res.send('hello world');
 });
 
-app.use( (req, res, next) => {
-		if( req.body ) res.send( req.body );
-		else res.send('finally something other than GET /');
+app.post( '/echo', checkAuth, bodyParser, (req, res, next) => {
+		res.send( req.body );
 });
 
 const port = 8081;
