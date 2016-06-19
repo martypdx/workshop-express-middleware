@@ -15,6 +15,7 @@
 	* try it out!
 	* help each other
 	* [Setup Check](setup-check.md)
+* Useful: [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
 * Review [Arrow Functions](https://github.com/martypdx/workshop-promises-fat-arrows/blob/master/fat-arrows.md)
 * [Express](http://expressjs.com/)
 	* [Middleware, middlewhat?](middleware.md)
