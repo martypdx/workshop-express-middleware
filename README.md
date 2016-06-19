@@ -1,9 +1,7 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) Code Fellows - NodePDX 2016 
 ===
-## Getting Beyond "app.get()"
-### _ExpressJS Middleware Explained and Explored_
+## Getting Beyond "app.get()" _ExpressJS Middleware Explained and Explored_
 
-Agenda
 * Intros
 	* me & Code Fellows
 	* you
