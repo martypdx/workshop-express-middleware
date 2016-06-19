@@ -9,6 +9,12 @@ router
 			if ( err ) res.status(500).send( err );
 			else res.send( pets );
 		});
+	})	
+	.get( '/:id', ( req, res ) => {
+		pets.get( req.params.id, ( err, pet ) => {
+			if ( err ) res.status(500).send( err );
+			else res.send( pet );
+		});
 	})
 	.post( '/', bodyParser, ( req, res ) => {
 		pets.add( req.body, ( err, pet ) => {
