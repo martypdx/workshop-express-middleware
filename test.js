@@ -1,29 +1,28 @@
 const app = require('express')();
-const bodyParser = require( './my-body-parser' )();
+const checkAuth = require( './check-auth' )( 'sekrit' );
 const petsRouter = require( './pets-router' );
-
-// function checkAuth( req, res, next ) {
-// 	const token = req.get('Authorization');
-// 	if( token && token === 'sekrit' ) {
-// 		next();
-// 	}
-// 	else {
-// 		res.status(400).send('not authorized')
-// 	}
-// }
 
 app.use( ( req, res, next ) => {
 	console.log( req.method, req.url );
 	next();
 });
 
-app.get( '/', (req, res) => {
-		res.send('hello world');
+// app.use( express.static( __dirname + 'public' ) );
+ 
+// app.get( '/', (req, res) => {
+// 		res.send('hello world');
+// });
+
+app.use( '/api/pets', checkAuth, petsRouter );
+
+app.use( ( req, res ) => {
+	res.status(404).send('<h6>not found</h6>');
+})
+
+app.use( ( err, req, res, next ) => {
+	const code = err.code ? err.code : 500;
+	const error = err.error ? err.error : err || 'Internal error';
+	res.status( code ).send( { error } );
 });
 
-app.use( '/api/pets', petsRouter );
-
-
-
-const port = 8081;
-app.listen(port, () => console.log('running on port', port));
+module.exports = app;

@@ -5,20 +5,20 @@ const bodyParser = require( './my-body-parser' )();
 
 router
 	.get( '/', ( req, res ) => {
-		pets.getAll( ( err, pets ) => {
-			if ( err ) res.status(500).send( err );
+		pets.getAll( ( err, pets, next ) => {
+			if ( err ) next( err );
 			else res.send( pets );
 		});
 	})	
-	.get( '/:id', ( req, res ) => {
+	.get( '/:id', ( req, res, next ) => {
 		pets.get( req.params.id, ( err, pet ) => {
-			if ( err ) res.status(500).send( err );
+			if ( err ) next( err );
 			else res.send( pet );
 		});
 	})
-	.post( '/', bodyParser, ( req, res ) => {
+	.post( '/', bodyParser, ( req, res, next ) => {
 		pets.add( req.body, ( err, pet ) => {
-			if ( err ) res.status(500).send(err);
+			if ( err ) next(err);
 			else res.send( pet );
 		})
 	});
